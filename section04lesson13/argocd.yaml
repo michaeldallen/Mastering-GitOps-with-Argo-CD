@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL:  'git@github.com:michaeldallen/Mastering-GitOps-with-Argo-CD.git'
-    path: section03lesson09/manifest
+    path: section04lesson12/manifest
     targetRevision: master
   destination:
     server: 'https://kubernetes.default.svc'
