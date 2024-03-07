@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: httpbin
+  name: httpd
   namespace: argocd
 spec:
   project: default
   source:
-    chart: httpbin
+    chart: httpd
     repoURL:  https://mw-docker.repositories.mathworks.com:443/artifactory/mw-docker/mallen/httpd/
     targetRevision: 0.1.0
     helm:
