@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: httpbin
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: httpbin
+    repoURL:  https://mw-docker.repositories.mathworks.com:443/artifactory/mw-docker/mallen/httpd/
+    targetRevision: 0.1.0
+    helm:
+      releaseName: httpd-rel
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      
+    
