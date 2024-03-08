@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-httpbin
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL:  'git@github.com:michaeldallen/Mastering-GitOps-with-Argo-CD.git'
+    path: section04lesson13/httpbin
+    targetRevision: master
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      
