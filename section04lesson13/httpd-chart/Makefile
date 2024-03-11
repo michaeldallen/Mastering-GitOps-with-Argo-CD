@@ -5,13 +5,13 @@
 
 REG := oci://mw-docker.repositories.mathworks.com
 
-REOP := mallen
+REPO := mallen
 
 APP := httpd
 
 IAM := ${REG}/${REPO}/${APP}
 
-VER := 1.4.5
+VER := 1.4.5-dev
 
 THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
 
