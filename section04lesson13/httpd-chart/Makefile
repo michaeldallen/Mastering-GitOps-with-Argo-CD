@@ -9,9 +9,7 @@ REPO := mallen
 
 APP := httpd
 
-IAM := ${REG}/${REPO}/${APP}
-
-VER := 1.4.5-dev
+VER := 1.4.7
 
 THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
 
@@ -19,7 +17,7 @@ helm.package :
 	helm package . --version ${VER}
 
 helm.push : helm.package
-	helm push ${APP}-${VER}.tgz ${IAM}
+	helm push ${APP}-${VER}.tgz ${REG}/${REPO}
 
 all : helm.package helm.push
 
